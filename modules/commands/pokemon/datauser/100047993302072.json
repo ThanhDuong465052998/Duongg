@@ -1,0 +1,25 @@
+{
+  "name": "Nguyễn Tấn Hoàng",
+  "ID": "100047993302072",
+  "pet": [
+    {
+      "name": "Clawitzer",
+      "type": "Water",
+      "HP": "28.4",
+      "Attack": "29.2",
+      "Defense": "35.2",
+      "Speed": "23.6",
+      "skill": [
+        "Mega Launcher"
+      ],
+      "coins": 0,
+      "images": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/693.png"
+    }
+  ],
+  "foods": [],
+  "solo": {
+    "win": 0,
+    "lose": 0,
+    "draw": 0
+  }
+}

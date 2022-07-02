@@ -63,7 +63,7 @@ module.exports = function({ api, models }) {
 	const handleCreateDatabase = require("./handle/handleCreateDatabase")({  api, Threads, Users, Currencies, models });
 
 	logger.loader(`====== ${Date.now() - global.client.timeStart}ms ======`);
-
+  
 	//////////////////////////////////////////////////
 	//========= Send event to handle need =========//
 	/////////////////////////////////////////////////

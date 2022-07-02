@@ -4,7 +4,7 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "Mirai Team",
     description: "Tham gia câu cá ngay trên chính nhóm của bạn",
-    commandCategory: "Giải trí",
+    commandCategory: "Game như cặc",
     usages: "help",
     cooldowns: 0,
     dependencies: {
@@ -291,7 +291,7 @@ module.exports.run = async function ({ event, api, args }) {
 
         case "shop": {
             if (!existsSync(dirUser)) return api.sendMessage("[ Fishing Shop ] Bạn chưa đăng ký câu cá để có thể sử dụng chức năng mua đồ!", threadID, messageID);
-            return api.sendMessage("‏‏‎「 Fishing Shop 」\nHãy reply(Phản hồi) tin nhắn này số bạn chọn\n\n❯ 1/ Buy - Mua vật phẩm.\n❯ 2/ Sell - Bán vật phẩm câu được.\n❯ 3/ Upgrade - Nâng cấp vật phẩm.", threadID, (error, info) => {
+            return api.sendMessage("「 Fishing Shop 」\nHãy reply(Phản hồi) tin nhắn này số bạn chọn\n\n❯ 1/ Buy - Mua vật phẩm.\n❯ 2/ Sell - Bán vật phẩm câu được.\n❯ 3/ Upgrade - Nâng cấp vật phẩm.", threadID, (error, info) => {
                 global.client.handleReply.push({
                     name: this.config.name,
                     messageID: info.messageID,

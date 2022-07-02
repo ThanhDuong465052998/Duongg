@@ -3,13 +3,13 @@ const chalk = require('chalk');
 module.exports = (data, option) => {
 	switch (option) {
 		case "warn":
-			console.log(chalk.yellow('[ ❕ Lỗi rồi ] » ') + data);
+				console.log(chalk.bold.hex("#ff0000").bold('» Lỗi « ') + data);
 			break;
 		case "error":
-			console.log(chalk.red('[ ❕ Lỗi rồi ] » ') + data);
+			console.log(chalk.bold.hex("#ff0000").bold('» Lỗi « ') + data);
 			break;
 		default:
-			console.log(chalk.magenta(`${option} » `) + data);
+				console.log(chalk.bold.hex("#FF0000").bold(`${option} » `) + data);
 			break;
 	}
 }
@@ -17,13 +17,13 @@ module.exports = (data, option) => {
 module.exports.loader = (data, option) => {
 	switch (option) {
 		case "warn":
-			console.log(chalk.yellow('[D-JUKIE ] » ') + data);
+			console.log(chalk.bold.hex("#00FFFF").bold('» THOANG:3 « ') + data);
 			break;
 		case "error":
-			console.log(chalk.red('[D-JUKIE ] » ') + data);
+		console.log(chalk.bold.hex("#ff0000").bold('» THOANG:3 « ') + data);
 			break;
 		default:
-			console.log(chalk.green(`[D-JUKIE ] » `) + data);
+			console.log(chalk.bold.hex("#00FFFF").bold(`» THOANG:3 «  `) + data);
 			break;
 	}
 }

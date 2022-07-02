@@ -7,7 +7,9 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
         var { senderID, threadID } = event;
         var senderID = String(senderID);
         var threadID = String(threadID);
-        if (userBanned.has(senderID) || threadBanned.has(threadID) || allowInbox == !![] && senderID == threadID) return;
+        var fixUserIB = true;
+        //allowInbox == !![]
+        if (userBanned.has(senderID) || threadBanned.has(threadID) && fixUserIB) return;
         for (const eventReg of eventRegistered) {
             const cmd = commands.get(eventReg);
             var getText2;

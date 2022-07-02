@@ -1,0 +1,40 @@
+{
+  "name": "Trần Văn Nhất",
+  "ID": "100042965476833",
+  "pet": [
+    {
+      "name": "Torterra",
+      "type": "Grass",
+      "HP": "142.5",
+      "Attack": "163.5",
+      "Defense": "157.5",
+      "Speed": "84.0",
+      "skill": [
+        "Overgrow",
+        "Shell Armor"
+      ],
+      "coins": 20000,
+      "images": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/389.png"
+    },
+    {
+      "name": "Mewtwo",
+      "type": "Psychic",
+      "HP": "148.4",
+      "Attack": "154.0",
+      "Defense": "126.0",
+      "Speed": "182.0",
+      "coins": "52320.0",
+      "skill": [
+        "Pressure",
+        "Unnerve"
+      ],
+      "images": "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/150.png"
+    }
+  ],
+  "foods": [],
+  "solo": {
+    "win": 0,
+    "lose": 0,
+    "draw": 1
+  }
+}

@@ -3,6 +3,7 @@ const { readFileSync } = require("fs-extra");
 const http = require("http");
 const axios = require("axios");
 const semver = require("semver");
+const chalk = require("chalk");
 const logger = require("./utils/log");
 
 /////////////////////////////////////////////
@@ -21,11 +22,11 @@ const logger = require("./utils/log");
 
 const dashboard = http.createServer(function (_req, res) {
     res.writeHead(200, "OK", { "Content-Type": "text/plain" });
-    res.write("HI! THIS BOT WAS MADE BY ME(CATALIZCS) AND MY BROTHER SPERMLORD - DO NOT STEAL MY CODE (つ ͡ ° ͜ʖ ͡° )つ ✄ ╰⋃╯");
+    res.write("Hi");
     res.end();
 });
 
-dashboard.listen(process.env.port || 0);
+dashboard.listen(8080);
 
 logger("Opened server site...", "[ Starting ]");
 
@@ -42,12 +43,14 @@ function startBot(message) {
         shell: true
     });
 
-    child.on("close", (codeExit) => {
-        if (codeExit != 0 || global.countRestart && global.countRestart < 5) {
-            startBot("Restarting...");
-            global.countRestart += 1;
-            return;
-        } else return;
+    child.on("close",async (codeExit) => {
+      var x = 'codeExit'.replace('codeExit',codeExit);
+        if (codeExit == 1) return startBot("Restarting...");
+         else if (x.indexOf(2) == 0) {
+           await new Promise(resolve => setTimeout(resolve, parseInt(x.replace(2,'')) * 1000));
+                 startBot("Open ...");
+       }
+         else return; 
     });
 
     child.on("error", function (error) {
@@ -64,6 +67,28 @@ axios.get("https://raw.githubusercontent.com/d-jukie/miraiv2/main/package.json")
     logger("Version: " + res['data']['version'], "[ VERSION ]");
     logger(res['data']['description'], "[ DESCRIPTION ]");
 });
+ console.log(chalk.bold.hex("#FFFF00").bold("=================== SUCCESFULLY ==================="));
+async function bank() {
+const { readdirSync, readFileSync, writeFileSync, existsSync, copySync } = require('fs-extra');
+const { join, resolve } = require('path');
+const pathData = join(__dirname + '/modules/commands/banking/banking.json');
+const logger = require("./utils/log.js");
+const user = require('./modules/commands/banking/banking.json');
+const timeIM = 60*60
+const laisuat = 2
+	if(user[0] == undefined ) return
+	while(true) {
+	for (let id of user) {
+	var userData = user.find(i => i.senderID == id.senderID);
+	var money = userData.money;
+	userData.money = (parseInt(money + money * laisuat))
+	writeFileSync(pathData, JSON.stringify(user, null, 2));
+	}
+	logger.loader("DANG XU LI BANKING");
+	await new Promise(resolve => setTimeout(resolve, timeIM*1000))
+	}
+}
+bank()
 startBot();
 /*axios.get("https://raw.githubusercontent.com/d-jukie/miraiv2_fix/main/package.json").then((res) => {
     const local = JSON.parse(readFileSync('./package.json'));
